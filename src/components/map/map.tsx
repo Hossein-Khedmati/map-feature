@@ -13,10 +13,8 @@ import L from "leaflet";
 import { useRouter } from "next/navigation";
 
 import "leaflet/dist/leaflet.css";
-
 import { houses } from "./houses-data";
 import type { House } from "./houses-data";
-
 
 const customHouseIcon = new L.Icon({
   iconUrl: "/map-marker-svgrepo-com.svg",
@@ -25,9 +23,6 @@ const customHouseIcon = new L.Icon({
   popupAnchor: [0, -32],
 });
 
-
-
-// Hook to get map events and update filtered houses & zoom
 function MapEvents({
   setFilteredHouses,
   setZoom,
@@ -65,20 +60,19 @@ export default function MapFeature() {
   const [modalHouse, setModalHouse] = useState<House | null>(null);
   const router = useRouter();
 
-  // Set initial filtered houses on mount (full list)
   useEffect(() => {
     setFilteredHouses(houses);
   }, []);
 
   return (
-    <div  style={{ display: "flex", height: "90vh", width: "100%" }}>
-      {/* Map container */}
-      <div style={{ flex: 1, position: "relative" }}>
+    <div className="flex h-screen w-full">
+      {/* Map section */}
+      <div className="flex-1 relative">
         <MapContainer
           center={[35.6892, 51.389]}
           zoom={12}
           scrollWheelZoom={true}
-          style={{ height: "100%", width: "100%" }}
+          className="w-full h-full"
         >
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
@@ -98,13 +92,10 @@ export default function MapFeature() {
                 }}
               >
                 {zoom >= 16 && (
-                  <Tooltip
-                    direction="top"
-                    permanent
-                    interactive
-                    className="bg-amber-400"
-                  >
-                    {house.title}
+                  <Tooltip direction="top" permanent interactive>
+                    <span className="bg-red-500 px-2 py-1 rounded text-black text-sm font-medium">
+                      {house.title}
+                    </span>
                   </Tooltip>
                 )}
               </Marker>
@@ -116,41 +107,23 @@ export default function MapFeature() {
       </div>
 
       {/* Right-side list */}
-      <div
-        style={{
-          width: 300,
-          borderLeft: "1px solid #ddd",
-          overflowY: "auto",
-          padding: 10,
-          backgroundColor: "#fafafa",
-        }}
-      >
-        <h3
-        className="text-blue-500"
-          style={{
-            marginTop: 0,
-            marginBottom: 10,
-            borderBottom: "1px solid #ccc",
-            paddingBottom: 5,
-          }}
-        >
+      <div className="w-72 border-l border-gray-300 overflow-y-auto p-4 bg-gray-700">
+        <h3 className="text-blue-600 text-lg font-semibold border-b border-gray-300 pb-2 mb-3">
           خانه‌های موجود ({filteredHouses.length})
         </h3>
-        {filteredHouses.length === 0 && <p>خانه‌ای در این منطقه موجود نیست.</p>}
-        <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+        {filteredHouses.length === 0 && (
+          <p className="text-sm text-gray-500">خانه‌ای در این منطقه موجود نیست.</p>
+        )}
+        <ul className="space-y-2">
           {filteredHouses.map((house) => (
             <li
               key={house.id}
               onClick={() => setModalHouse(house)}
-              style={{
-                cursor: "pointer",
-                padding: "8px 5px",
-                borderBottom: "1px solid #eee",
-                borderRadius: 4,
-                marginBottom: 5,
-                backgroundColor:
-                  modalHouse?.id === house.id ? "#e3f2fd" : "transparent",
-              }}
+              className={`cursor-pointer px-3 py-2 rounded transition ${
+                modalHouse?.id === house.id
+                  ? "bg-blue-100 text-blue-700"
+                  : "hover:bg-gray-500"
+              }`}
             >
               {house.title}
             </li>
@@ -162,64 +135,32 @@ export default function MapFeature() {
       {modalHouse && (
         <div
           onClick={() => setModalHouse(null)}
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: "rgba(0,0,0,0.5)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex: 10000,
-          }}
+          className="fixed inset-0 bg-white/30 backdrop-blur-[1px] flex items-center justify-center z-[10000]"
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            style={{
-              backgroundColor: "white",
-              padding: 20,
-              borderRadius: 8,
-              width: "90%",
-              maxWidth: 400,
-              boxShadow: "0 0 15px rgba(0,0,0,0.3)",
-            }}
+            className="bg-white p-6 rounded-lg w-[90%] max-w-md shadow-lg"
           >
-            <h2>{modalHouse.title}</h2>
-            <p>{modalHouse.description}</p>
+            <h2 className="text-xl font-semibold mb-2">{modalHouse.title}</h2>
+            <p className="text-gray-700 mb-4">{modalHouse.description}</p>
 
-            <button
-              onClick={() => {
-                router.push(`/houses/${modalHouse.id}`);
-              }}
-              style={{
-                marginTop: 15,
-                padding: "8px 15px",
-                backgroundColor: "#007bff",
-                color: "white",
-                border: "none",
-                borderRadius: 4,
-                cursor: "pointer",
-              }}
-            >
-              مشاهده اطلاعات بیشتر
-            </button>
+            <div className="flex justify-between items-center">
+              <button
+                onClick={() => {
+                  router.push(`/houses/${modalHouse.id}`);
+                }}
+                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+              >
+                مشاهده اطلاعات بیشتر
+              </button>
 
-            <button
-              onClick={() => setModalHouse(null)}
-              style={{
-                marginTop: 10,
-                padding: "5px 10px",
-                backgroundColor: "#ccc",
-                border: "none",
-                borderRadius: 4,
-                cursor: "pointer",
-                float: "right",
-              }}
-            >
-              بستن
-            </button>
+              <button
+                onClick={() => setModalHouse(null)}
+                className="text-gray-600 hover:text-gray-800 transition text-sm"
+              >
+                بستن
+              </button>
+            </div>
           </div>
         </div>
       )}

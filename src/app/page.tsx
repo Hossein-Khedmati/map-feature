@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import ClientMap from "@/components/map/client-map";
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <div>
+      <ClientMap />
+    </div>
+  );
 }
 
-export default Home
+export default Home;
