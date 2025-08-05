@@ -4,7 +4,11 @@ export type House = {
   lat: number;
   lng: number;
   description: string;
+  image: string;
+  price?: number;
+  city: string;
 };
+
 export const houses: House[] = [
   {
     id: 1,
@@ -12,6 +16,8 @@ export const houses: House[] = [
     lat: 35.735,
     lng: 51.55,
     description: "یک واحد آپارتمان شیک در بهترین نقطه تهران‌پارس.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 2,
@@ -19,6 +25,8 @@ export const houses: House[] = [
     lat: 35.82,
     lng: 51.42,
     description: "خانه ویلایی با حیاط بزرگ و دسترسی عالی.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 3,
@@ -26,6 +34,8 @@ export const houses: House[] = [
     lat: 35.8,
     lng: 51.4,
     description: "پنت‌هاوس لوکس با ویوی ابدی شهر.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 4,
@@ -33,6 +43,8 @@ export const houses: House[] = [
     lat: 35.77,
     lng: 51.37,
     description: "واحد اداری مناسب برای شرکت‌های کوچک.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 5,
@@ -40,6 +52,8 @@ export const houses: House[] = [
     lat: 35.76,
     lng: 51.33,
     description: "آپارتمان کوچک و دنج برای زوج‌های جوان.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 6,
@@ -47,6 +61,8 @@ export const houses: House[] = [
     lat: 35.65,
     lng: 51.42,
     description: "خانه قدیمی مناسب برای ساخت و ساز.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 7,
@@ -54,6 +70,8 @@ export const houses: House[] = [
     lat: 35.76,
     lng: 51.38,
     description: "آپارتمان مدرن در یکی از بهترین برج‌های شهرک غرب.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 8,
@@ -61,6 +79,8 @@ export const houses: House[] = [
     lat: 35.72,
     lng: 51.5,
     description: "خانه دلباز با نورگیر عالی در محله‌ای آرام.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 9,
@@ -68,6 +88,8 @@ export const houses: House[] = [
     lat: 35.69,
     lng: 51.4,
     description: "مغازه تجاری در خیابان پرتردد جمهوری.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 10,
@@ -75,6 +97,8 @@ export const houses: House[] = [
     lat: 35.85,
     lng: 51.43,
     description: "ویلای دوبلکس با استخر و امکانات کامل.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 11,
@@ -82,6 +106,8 @@ export const houses: House[] = [
     lat: 35.67,
     lng: 51.4,
     description: "خانه سنتی در قلب بازار تهران.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 12,
@@ -89,6 +115,8 @@ export const houses: House[] = [
     lat: 35.8,
     lng: 51.45,
     description: "آپارتمان بزرگ و خانوادگی در نیاوران.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 13,
@@ -96,6 +124,8 @@ export const houses: House[] = [
     lat: 35.63,
     lng: 51.4,
     description: "خانه ویلایی مناسب برای خانواده‌های پرجمعیت.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 14,
@@ -103,6 +133,8 @@ export const houses: House[] = [
     lat: 35.74,
     lng: 51.44,
     description: "آپارتمان خوش‌ساخت در خیابان دولت.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 15,
@@ -110,6 +142,8 @@ export const houses: House[] = [
     lat: 35.65,
     lng: 51.47,
     description: "خانه حیاط‌دار در محله‌ای دنج.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 16,
@@ -117,6 +151,8 @@ export const houses: House[] = [
     lat: 35.79,
     lng: 51.44,
     description: "آپارتمان لوکس با امکانات هتلینگ.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 17,
@@ -124,6 +160,8 @@ export const houses: House[] = [
     lat: 35.73,
     lng: 51.33,
     description: "خانه ویلایی با دسترسی به مترو.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 18,
@@ -131,6 +169,8 @@ export const houses: House[] = [
     lat: 35.72,
     lng: 51.41,
     description: "سوئیت مبله در مرکز شهر.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 19,
@@ -138,6 +178,8 @@ export const houses: House[] = [
     lat: 35.7,
     lng: 51.29,
     description: "ویلای مدرن با ویوی دریاچه چیتگر.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 20,
@@ -145,6 +187,8 @@ export const houses: House[] = [
     lat: 35.74,
     lng: 51.33,
     description: "خانه بازسازی شده در جنت‌آباد شمالی.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 21,
@@ -152,6 +196,8 @@ export const houses: House[] = [
     lat: 35.58,
     lng: 51.42,
     description: "آپارتمان ارزان و مناسب در شهر ری.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 22,
@@ -159,6 +205,8 @@ export const houses: House[] = [
     lat: 35.81,
     lng: 51.42,
     description: "خانه باغ با فضای سبز بسیار زیاد.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 23,
@@ -166,6 +214,8 @@ export const houses: House[] = [
     lat: 35.74,
     lng: 51.38,
     description: "دفتر کار مدرن با امکانات کامل.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 24,
@@ -173,6 +223,8 @@ export const houses: House[] = [
     lat: 35.7,
     lng: 51.39,
     description: "آپارتمان نوساز با طراحی مدرن و زیبا.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 25,
@@ -180,6 +232,8 @@ export const houses: House[] = [
     lat: 35.75,
     lng: 51.53,
     description: "خانه ویلایی با حیاط بزرگ و امکانات کامل.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 26,
@@ -187,6 +241,8 @@ export const houses: House[] = [
     lat: 35.72,
     lng: 51.57,
     description: "سوئیت شیک و مبله نزدیک به مراکز خرید.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 27,
@@ -194,6 +250,8 @@ export const houses: House[] = [
     lat: 35.74,
     lng: 51.43,
     description: "آپارتمان مناسب دانشجویان و زوج‌های جوان.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 28,
@@ -201,6 +259,8 @@ export const houses: House[] = [
     lat: 35.73,
     lng: 51.4,
     description: "خانه ویلایی با دسترسی آسان به خیابان‌های اصلی.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 29,
@@ -208,6 +268,8 @@ export const houses: House[] = [
     lat: 35.7,
     lng: 51.4,
     description: "مغازه تجاری مناسب برای کسب و کارهای کوچک.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 30,
@@ -215,6 +277,8 @@ export const houses: House[] = [
     lat: 35.69,
     lng: 51.36,
     description: "ویلای دوبلکس با امکانات کامل رفاهی.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 31,
@@ -222,6 +286,8 @@ export const houses: House[] = [
     lat: 35.72,
     lng: 51.31,
     description: "آپارتمان مدرن و نوساز با امکانات ورزشی.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 32,
@@ -229,6 +295,8 @@ export const houses: House[] = [
     lat: 35.75,
     lng: 51.6,
     description: "خانه باغ بزرگ با فضای سبز دلنشین.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 33,
@@ -236,6 +304,8 @@ export const houses: House[] = [
     lat: 35.68,
     lng: 51.42,
     description: "دفتر اداری در مرکز شهر با دسترسی عالی.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 34,
@@ -243,6 +313,8 @@ export const houses: House[] = [
     lat: 35.71,
     lng: 51.35,
     description: "آپارتمان نقلی با قیمت مناسب.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 35,
@@ -250,6 +322,8 @@ export const houses: House[] = [
     lat: 35.72,
     lng: 51.52,
     description: "خانه ویلایی با حیاط بزرگ و دسترسی به مدرسه.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 36,
@@ -257,6 +331,8 @@ export const houses: House[] = [
     lat: 35.69,
     lng: 51.41,
     description: "سوئیت مبله نزدیک دانشگاه تهران.",
+    image: "/home.webp",
+    city: "تهران",
   },
   {
     id: 37,
@@ -264,5 +340,7 @@ export const houses: House[] = [
     lat: 35.79,
     lng: 51.39,
     description: "آپارتمان لوکس با امکانات هتلینگ.",
+    image: "/home.webp",
+    city: "تهران",
   },
 ];
