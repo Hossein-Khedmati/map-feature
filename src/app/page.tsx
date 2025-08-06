@@ -1,12 +1,11 @@
-import React from "react";
-import ClientMap from "@/components/map/client-map";
+// app/map-test/page.tsx
 
-function Home() {
+import  Map  from '@/components/map/client-map';
+
+export default function MapTestPage() {
   return (
-    <div>
-      <ClientMap />
+    <div className="h-screen w-full">
+      <Map />
     </div>
   );
 }
-
-export default Home;

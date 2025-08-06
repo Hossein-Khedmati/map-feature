@@ -29,6 +29,15 @@ export const houses: House[] = [
     city: "تهران",
   },
   {
+    id: 59,
+    title: "خانه ویلایی در تجریش",
+    lat: 39.82,
+    lng: 60.42,
+    description: "خانه ویلایی با حیاط بزرگ و دسترسی عالی.",
+    image: "/home.webp",
+    city: "الف",
+  },
+  {
     id: 3,
     title: "پنت‌هاوس در زعفرانیه",
     lat: 35.8,
