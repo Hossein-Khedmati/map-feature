@@ -13,14 +13,14 @@ export default function HouseListMobile({ houses }: HouseListMobileProps) {
   const router = useRouter();
 
   return (
-    <div className="absolute inset-0 overflow-y-auto bg-white p-4 z-[998]">
-      <h3 className="text-lg font-semibold mb-4">
+    <div className="absolute inset-0 overflow-y-auto bg-[#3395D1ea] p-4 z-[998]">
+      <h3 dir="rtl" className="text-lg font-semibold mb-4">
         خانه‌های موجود ({houses.length})
       </h3>
       {houses.length === 0 && (
-        <p className="text-sm text-gray-500">خانه‌ای در این منطقه موجود نیست.</p>
+        <p dir="rtl" className="text-sm text-gray-500">خانه‌ای در این منطقه موجود نیست.</p>
       )}
-      <ul className="grid grid-cols-1 gap-4">
+      <ul dir="rtl" className="grid grid-cols-1 gap-4">
         {houses.map((house) => (
           <li
             key={house.id}

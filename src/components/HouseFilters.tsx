@@ -1,4 +1,3 @@
-
 "use client";
 import React from "react";
 
@@ -21,8 +20,8 @@ export default function HouseFilters({ cities, filters, onChange }: HouseFilters
   };
 
   return (
-    <div className=" relative  bg-gray-400 p-3 rounded shadow flex justify-end gap-2">
-      <select value={filters.city} onChange={handleCityChange} className="p-2 border rounded">
+    <div className=" relative  bg-[#3395D1ea] p-3 pr-6 rounded shadow flex justify-end gap-2 height-[66px]">
+      <select value={filters.city} onChange={handleCityChange} className="p-2 border rounded bg-[#3395D1ea]">
         <option value="">همه شهرها</option>
         {cities.map((city) => (
           <option key={city} value={city}>{city}</option>
@@ -34,6 +33,7 @@ export default function HouseFilters({ cities, filters, onChange }: HouseFilters
         value={filters.search}
         onChange={handleSearchChange}
         className="p-2 border rounded"
+        dir="rtl"
       />
     </div>
   );

@@ -14,14 +14,14 @@ export default function HouseListDesktop({
   onSelect,
 }: HouseListDesktopProps) {
   return (
-    <div className="w-[30%] bg-gray-600 p-4 overflow-y-auto">
-      <h3 className="text-lg font-semibold mb-4">
+    <div className="w-[30%] bg-[#3395D1ea] p-4 overflow-y-auto">
+      <h3 dir="rtl" className="text-lg font-semibold mb-4">
         خانه‌های موجود ({houses.length})
       </h3>
       {houses.length === 0 && (
-        <p className="text-sm text-gray-200">خانه‌ای در این منطقه موجود نیست.</p>
+        <p dir="rtl" className="text-sm text-gray-200">خانه‌ای در این منطقه موجود نیست.</p>
       )}
-      <ul className="grid grid-cols-1 gap-4">
+      <ul dir="rtl" className="grid grid-cols-1 gap-4">
         {houses.map((house) => (
           <li
             key={house.id}

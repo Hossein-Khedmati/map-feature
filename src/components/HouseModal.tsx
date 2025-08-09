@@ -14,7 +14,7 @@ export default function HouseModal({ house, onClose }: HouseModalProps) {
   const router = useRouter();
 
   return (
-    <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-[1000] w-[90%] max-w-md">
+    <div dir="rtl" className="absolute bottom-5 left-1/2 -translate-x-1/2 z-[1000] w-[90%] max-w-md">
       <div className="bg-white rounded-xl shadow-lg overflow-hidden">
         <Image
           src={house.image}
